@@ -1,0 +1,12 @@
+/* CLASS IN INDEX.HTML */
+.crystals-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* CLASS CREATED IN GAME.JS */
+.crystal {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
