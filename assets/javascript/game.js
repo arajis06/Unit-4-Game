@@ -1,18 +1,22 @@
 // GLOBAL VARIABLES
-var random;
+var gameRandomNum;
 var losses;
 var wins;
 
 
-// CREATING A FOR-LOOP FOR THE CRYSTALS CLICKS 
-for (var i = 0; i < 4; i++) {
-    
-    var crystal = $("<div>");   //THIS CREATES 4 CRYSTAL DIVS INSIDE THE MAIN CRYSTALS DIV
+// CREATING A FOR-LOOP TO RUN THE SAME CODE OVER & OVER AGAIN FOR THE 4 CRYSTALS WITH DIFF VALUES
+for(var i = 0; i < 4; i++) {
+    var gameRandomNum = Math.floor(Math.random() * 12);    // GENERATES GAME RANDOM NUMBERS
+    // console.log(gameRandomNum);
 
-        crystal.attr("class", 'crystal');    //THIS IS FOR CREATING CRYSTAL STYLES FOR CRYSTAL DIV-CSS
-
-        $(".crystals").append(crystal);     //THIS IS APPENDING THE 4 NEW DIVS TO THE INDEX.HTML
-     
+    var crystal = $("<div>");   //THIS CREATES 4 CRYSTAL DIVS INSIDE THE MAIN CRYSTALS-CONTAINER BY USING THE SELECTOR $("<DIV")
+        //BELOW, THE OBJECT(CRYSTAL) IS ATTACHED WITH THE ATTR() PROPERTY TO SET MULTIPLE ATTRIBUTE AND VALUES TO BE APPLIED TO THE VAR-CRYSTAL 
+        crystal.attr({ 
+            "class": 'crystal', //CREATING CSS STYLING via JS
+            "data"
+        });  
+    $(".crystals-container").append(crystal);   //THIS IS APPENDING THE 4 NEW DIVS TO THE INDEX.HTML thru JS
+    //  console.log("crystal");
 }
 
 
