@@ -1,22 +1,27 @@
 // GLOBAL VARIABLES
-var gameRandomNum;
+var game_RandomNum;
 var losses;
 var wins;
 
 
+game_RandomNum = Math.floor(Math.random() * 101) + 19; // GENERATES GAME RANDOM NUMBERS (subtract 19 from 120 to get 101 so that the random numbers stay in the range between 19-120 since using Math.random starts counting from 0)
+$("#game-random-number").html('Game Generated Number: ');
+console.log(game_RandomNum);
+
 // CREATING A FOR-LOOP TO RUN THE SAME CODE OVER & OVER AGAIN FOR THE 4 CRYSTALS WITH DIFF VALUES
 for(var i = 0; i < 4; i++) {
-    var gameRandomNum = Math.floor(Math.random() * 12);    // GENERATES GAME RANDOM NUMBERS
-    // console.log(gameRandomNum);
+    var crystal_RandomNum = Math.floor(Math.random() * 11) + 1; // GENERATES CRYSTAL RANDOM NUMBERS 1-12
+     //console.log(crystal_RandomNum);
 
-    var crystal = $("<div>");   //THIS CREATES 4 CRYSTAL DIVS INSIDE THE MAIN CRYSTALS-CONTAINER BY USING THE SELECTOR $("<DIV")
+    var crystal = $("<div>");   //THIS CREATES 4 ADDITIONAL CRYSTAL DIVS INSIDE THE MAIN CRYSTALS-CONTAINER BY USING THE SELECTOR $("<DIV>") THATS ATTACHED TO THE CLASS: CRYSTAL
         //BELOW, THE OBJECT(CRYSTAL) IS ATTACHED WITH THE ATTR() PROPERTY TO SET MULTIPLE ATTRIBUTE AND VALUES TO BE APPLIED TO THE VAR-CRYSTAL 
         crystal.attr({ 
             "class": 'crystal', //CREATING CSS STYLING via JS
-            "data"
+            "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH CRYSTAL
         });  
+
     $(".crystals-container").append(crystal);   //THIS IS APPENDING THE 4 NEW DIVS TO THE INDEX.HTML thru JS
-    //  console.log("crystal");
+      //console.log("crystal");
 }
 
 
