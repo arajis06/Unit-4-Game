@@ -5,25 +5,29 @@ var wins;
 
 
 game_RandomNum = Math.floor(Math.random() * 101) + 19; // GENERATES GAME RANDOM NUMBERS (subtract 19 from 120 to get 101 so that the random numbers stay in the range between 19-120 since using Math.random starts counting from 0)
-$("#game-random-number").html('Game Generated Number: ');
-console.log(game_RandomNum);
+$("#game-random-number").html('Game Generated Number: ' + game_RandomNum);
+// console.log(game_RandomNum);
 
 // CREATING A FOR-LOOP TO RUN THE SAME CODE OVER & OVER AGAIN FOR THE 4 CRYSTALS WITH DIFF VALUES
 for(var i = 0; i < 4; i++) {
     var crystal_RandomNum = Math.floor(Math.random() * 11) + 1; // GENERATES CRYSTAL RANDOM NUMBERS 1-12
      //console.log(crystal_RandomNum);
 
-    var crystal = $("<div>");   //THIS CREATES 4 ADDITIONAL CRYSTAL DIVS INSIDE THE MAIN CRYSTALS-CONTAINER BY USING THE SELECTOR $("<DIV>") THATS ATTACHED TO THE CLASS: CRYSTAL
-        //BELOW, THE OBJECT(CRYSTAL) IS ATTACHED WITH THE ATTR() PROPERTY TO SET MULTIPLE ATTRIBUTE AND VALUES TO BE APPLIED TO THE VAR-CRYSTAL 
+    var crystal = $("<div>");   //THE CRYSTAL VARIABLE IS ASSIGNED A VALUE OF <DIV> SO THAT IT CAN BE USED TO INSIDE THE CRYSTALS TO CREATE 4 NESTED ELEMENTS 
+
+        //BELOW, THE OBJECT(CRYSTAL) IS BEING SET WITH ATTR() TO ATTACH MULTIPLE ATTRIBUTE AND VALUES TO BE APPLIED TO THE VAR-CRYSTAL AS PROPERTIES OF THE CRYSTAL
         crystal.attr({ 
-            "class": 'crystal', //CREATING CSS STYLING via JS
-            "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH CRYSTAL
+            "class": 'crystal', //CREATING A CLASS FOR THE OBJECT(CRYSTAL) WHICH CAN BE USED FOR STYLING IN CSS 
+            "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH OF THE 4 CRYSTALS
         });  
 
-    $(".crystals-container").append(crystal);   //THIS IS APPENDING THE 4 NEW DIVS TO THE INDEX.HTML thru JS
+    $(".game-crystals").append(crystal);   //THIS IS APPENDING THE 4 NEW CRYSTAL DIVS TO THE INDEX.HTML FILE 
       //console.log("crystal");
 }
 
+$(".crystal").on("click", function() { //ADDING AN EVENT LISTENER OF "ONCLICK" SO THAT ONCE CLICKED THE HIDDEN NUMBERS DISPLAY.
+    console.log($(this).attr('crystal-hidden-number'));
+});
 
 
 // THE GAME HAS 4 CRYSTALS AND A THE GAME RANDOM GENERATED NUMBER
