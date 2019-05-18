@@ -10,7 +10,6 @@ body {
     background-size: cover; 
     background-repeat: no-repeat;
     color: ghostwhite;
-    /* font-family: 'Courier New', Courier, monospace; */
 }
 .container {
     text-align: center;
@@ -36,7 +35,6 @@ h1 {
     padding: 25px;
     color: ghostwhite;
     font-family: 'Ranchers', cursive; 
-    /* font-family: 'Courier New', Courier, monospace; */
 }
 .play {
     color: black;
@@ -46,12 +44,11 @@ h1 {
 }
 p {
     padding: 0 60px;
-    /* color: black; */
     font-weight: bolder;
     font-size: 22px;
     font-family: 'Ranchers', cursive;
     color: black;
-    /* font-family: 'Courier New', Courier, monospace; */
+
 
 }
 .game-number {
@@ -78,9 +75,8 @@ p {
     padding-top: 30px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
-/* CLASS CREATED IN GAME.JS */
+
 .crystal {
     height: 150px;
     width: 150px;
