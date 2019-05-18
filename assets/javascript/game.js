@@ -23,27 +23,18 @@ var startGame = function() {
         var crystal_RandomNum = Math.floor(Math.random() * 11) + 1; // GENERATES CRYSTAL RANDOM NUMBERS 1-12
             //console.log(crystal_RandomNum);
 
-        /*var crystal = $("<div>");   //THE CRYSTAL VARIABLE IS ASSIGNED A VALUE OF <DIV> SO THAT IT CAN BE USED INSIDE THE GAME-CRYSTALS DIV TO CREATE 4 NESTED ELEMENTS 
+        var crystal = $(".crystal"); //THE CRYSTAL VARIABLE IS ASSIGNED THE CLASS CRYSTAL SO THAT IT CAN BE PASSED INSIDE THE CRYSTAL DIVS 
 
-            //BELOW, THE OBJECT(CRYSTAL) IS BEING SET WITH ATTR() TO ATTACH MULTIPLE ATTRIBUTE AND VALUES TO BE APPLIED TO THE OBJECT AS PROPERTIES OF THE CRYSTAL
-            crystal.attr({ 
-                "class": 'crystal', //CREATING A CLASS FOR THE OBJECT(CRYSTAL) WHICH CAN BE USED FOR STYLING IN CSS 
-                "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH OF THE 4 CRYSTALS
-            });
-                
-            //crystal.html(crystal_RandomNum);  //SHOWS IN THE DOM THE RANDOM NUMBER IN THE CRYSTAL BOXES  --TESTING GAME ONLY-- 
-
-        $(".game-crystals").append(crystal);   //THIS WILL APPENDING THE 4 NEW CRYSTAL DIVS TO THE INDEX.HTML FILE 
-    }*/
-        var crystal = $(".crystal");
 
             crystal.attr({
-                "crystal-hidden-number": crystal_RandomNum
+                "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH OF THE 4 CRYSTALS
             });
 
-            $(".crystal").append(crystal);
+            $(".crystal").append(crystal); //THIS WILL APPENDING THE 4 NEW CRYSTAL DIVS TO THE INDEX.HTML FILE 
 
         $("#crystals-sum").html(sumOfCrystals); //THIS WILL PASS THE TOTAL SUM OF ALL THE CRYSTALS THAT WERE CLICKED IN THE INDEX.HTML FILE
+
+        } 
 
 }
 //==============================================================================================
