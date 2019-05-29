@@ -23,17 +23,16 @@ var startGame = function() {
         var crystal_RandomNum = Math.floor(Math.random() * 11) + 1; // GENERATES CRYSTAL RANDOM NUMBERS 1-12
             //console.log(crystal_RandomNum);
 
-        var crystal = $(".crystal"); //THE CRYSTAL VARIABLE IS ASSIGNED THE CLASS CRYSTAL SO THAT IT CAN BE PASSED INSIDE THE CRYSTAL DIVS 
+        var crystal = $(".c-" + (i + 1)); //THE CRYSTAL VARIABLE IS ASSIGNED THE CLASS CRYSTAL SO THAT IT CAN BE PASSED INSIDE THE CRYSTAL DIVS 
 
 
             crystal.attr({
                 "crystal-hidden-number": crystal_RandomNum //ADDING THE RANDOM NUMBERS TO EACH OF THE 4 CRYSTALS
             });
 
-            $(".crystal").append(crystal); //THIS WILL APPENDING THE 4 NEW CRYSTAL DIVS TO THE INDEX.HTML FILE 
 
-        $("#crystals-sum").html(sumOfCrystals); //THIS WILL PASS THE TOTAL SUM OF ALL THE CRYSTALS THAT WERE CLICKED IN THE INDEX.HTML FILE
-
+       //THIS WILL PASS THE TOTAL SUM OF ALL THE CRYSTALS THAT WERE CLICKED IN THE INDEX.HTML FILE
+       $("#crystals-sum").html(sumOfCrystals); 
         } 
 
 }
@@ -47,7 +46,7 @@ startGame(); //RUN EVERY TIME THE PAGE LOADS
 
 //ADDING AN EVENT LISTENER OF "ON.CLICK" SO THAT ONCE CLICKED THE HIDDEN NUMBERS DISPLAY.
 //$(".crystal").on("click", function() {            // !!!!not working now- figure out why. 
-$(document).on("click", ".crystal", function() {    //!!!!this works bc of EVEN DELEGATION RULES)
+$(".crystal").on("click", function() {    //!!!!this works bc of EVEN DELEGATION RULES)
 
     var hiddenNums = parseInt($(this).attr('crystal-hidden-number')); //ANALYZES OBJECT(HIDDENNUMS) STRING AND RETURNS AN INTERGER(WHOLE NUMBER)
 

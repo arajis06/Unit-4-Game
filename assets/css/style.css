@@ -7,7 +7,7 @@ body {
     margin: 25px 325px;
     border: 5px solid black;
     background: url("../images/striped_BG3.png");
-    background-size: cover; 
+    background-size: 120%; 
     background-repeat: no-repeat;
     color: ghostwhite;
 }
@@ -28,6 +28,7 @@ body {
 .header {
     text-align: center;
     background-color: black;
+    height: 80px;
    
 }
 h1 {
@@ -35,44 +36,46 @@ h1 {
     padding: 25px;
     color: ghostwhite;
     font-family: 'Ranchers', cursive; 
+    font-size: 26px;
 }
 .play {
     color: black;
     margin-top: 0;
     font-family: 'Ranchers', cursive;
     font-weight: bold;
+    font-size: 22px;
 }
 p {
-    padding: 0 60px;
+    padding: 0 5px;
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 16px;
     font-family: 'Ranchers', cursive;
     color: black;
 
 
 }
 .game-number {
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Ranchers', cursive;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 #game-random-number {
-    font-size: 30px;
+    font-size: 24px;
 }
 .total {
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Ranchers', cursive;
     font-weight: bold;
     margin-bottom: 10px;
 }
 #crystals-sum {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
 }
 .game-crystals { 
-    padding-top: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -81,6 +84,9 @@ p {
     height: 150px;
     width: 150px;
     padding: 20px;
+}
+h3 {
+    font-size: 24px;
 }
 h4 {
     font-size: 20px;
